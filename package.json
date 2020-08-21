@@ -1,0 +1,17 @@
+{
+  "name": "annoy-me",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "client": "cd client && npm start",
+    "api": "cd api && nodemon index.js",
+    "dev": "concurrently --kill-others \"npm run api\" \"npm run client\"",
+    "install": "cd api && npm install && cd ../client && npm install",
+    "start": "cd client && npm run build && cd ../api && node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  }
+}
