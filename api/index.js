@@ -11,7 +11,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post("/sendComment", (req, res) => {
-  say.speak(req.body.comment, "Alex");
+  say.speak(req.body.comment, (err) => {
+	if (err){
+		console.log(err)
+		res.status(400).send("NO")
+	}
+});
 
   console.log(
     req.body.comment,
